@@ -3,7 +3,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
 import {
-  getFirestore, collection, getDocs
+  getFirestore, collection, getDocs,
+  addDoc, deleteDoc, doc
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"; //'firebase/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyAgQrhvuFI_AMWZ1ErNtlrPLV_kgk9RP4s",
@@ -41,3 +42,32 @@ getDocs(colRef)
   })
 
 // this will try to get all the docs from colRef, aka the collection called Websites.
+
+
+// adding websites
+const addWebsiteForm = document.querySelector('.add')
+addWebsiteForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    
+    addDoc(colRef, {
+        website: addWebsiteForm.website.value,
+        username: addWebsiteForm.username.value,
+        password: addWebsiteForm.password.value,
+    })
+    .then(() => {
+        addWebsiteForm.reset()
+    })
+})
+
+// deleting websites
+const deleteWebsiteForm = document.querySelector('.delete')
+deleteWebsiteForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    
+    const docRef = doc(db, 'Websites', deleteWebsiteForm.id.value)
+    
+    deleteDoc(docRef)
+        .then(() => {
+            deleteWebsiteForm.reset()
+        })
+})
