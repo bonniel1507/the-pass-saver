@@ -3,7 +3,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
 import {
-  getFirestore, collection, getDocs,
+  getFirestore, collection, onSnapshot,
   addDoc, deleteDoc, doc
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"; //'firebase/firestore';
 const firebaseConfig = {
@@ -26,20 +26,24 @@ const db = getFirestore()
 // collection ref
 const colRef = collection(db,'Websites')
 
-// get collection data
-getDocs(colRef)
-  .then((snapshot) => {
-    // console.log(snapshot.docs)
+// real time collection data
+// getDocs(colRef)
+//   .then((snapshot) => {
+//     // console.log(snapshot.docs)
     
+    
+//   })
+//   .catch(err => {
+//       console.log(err.message)
+//   })
+
+onSnapshot(colRef, (snapshot) => {
     let websites = []
     snapshot.docs.forEach((doc) => {
         websites.push({ ...doc.data(), id: doc.id })
     })
     console.log(websites)
-  })
-  .catch(err => {
-      console.log(err.message)
-  })
+})
 
 // this will try to get all the docs from colRef, aka the collection called Websites.
 
