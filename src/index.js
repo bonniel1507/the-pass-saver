@@ -4,7 +4,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase
 
 import {
   getFirestore, collection, onSnapshot,
-  addDoc, deleteDoc, doc
+  addDoc, deleteDoc, doc,
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"; //'firebase/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyAgQrhvuFI_AMWZ1ErNtlrPLV_kgk9RP4s",
@@ -27,16 +28,6 @@ const db = getFirestore()
 const colRef = collection(db,'Websites')
 
 // real time collection data
-// getDocs(colRef)
-//   .then((snapshot) => {
-//     // console.log(snapshot.docs)
-    
-    
-//   })
-//   .catch(err => {
-//       console.log(err.message)
-//   })
-
 onSnapshot(colRef, (snapshot) => {
     let websites = []
     snapshot.docs.forEach((doc) => {
@@ -74,4 +65,21 @@ deleteWebsiteForm.addEventListener('submit', (e) => {
         .then(() => {
             deleteWebsiteForm.reset()
         })
+})
+
+// update websites
+const updateForm = document.querySelector('.update')
+updateForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    
+    const docRef = doc(db, 'Websites', updateForm.id.value)
+    
+    updateDoc(docRef, {
+        username: updateForm.username.value,
+        password: updateForm.password.value,
+        
+    })
+    .then(() => {
+        updateForm.reset()
+    })
 })
