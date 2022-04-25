@@ -34,6 +34,18 @@ onSnapshot(colRef, (snapshot) => {
         websites.push({ ...doc.data(), id: doc.id })
     })
     console.log(websites)
+
+    // websites.forEach(function(web, i){
+    //     var p = document.createElement('p')
+    //     var span = document.createElement('span')
+
+    //     span.innerHTML = websites[i]
+
+    //     p.appendChild(span)
+
+    //     document.querySelector('.list').appendChild(p)
+    // })
+    
 })
 
 // this will try to get all the docs from colRef, aka the collection called Websites.
