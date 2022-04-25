@@ -10,6 +10,7 @@
         <style>
             <!--/* CSS */-->
 
+
             html, body {
                 /*background-color: lightgray;*/
                 /*font-family: 'Arvo', serif;*/
@@ -48,6 +49,22 @@
                 /*border:;*/
             /*}*/
 
+=======
+            
+            h1 {
+                margin: 15px;
+            }
+            
+            form {
+                margin: 15px;
+                padding: 15px;
+            }
+            
+            button {
+                margin: 10px 0px;
+            }
+            
+>>>>>>> 779906e6831855a54756bfd44e77e5bdc1b916f5
         </style>
 
 
@@ -56,13 +73,25 @@
     <body>
 
 
+
+
+        
+        <h1>Open console to view the informations</h1>
+        
+
         <form class="add">
             <label for="website">Website:</label>
             <input type="text" name="website" required>
+            <br>
             <label for="username">Username:</label>
             <input type="text" name="username" required>
+            <br>
             <label for="password">Password:</label>
             <input type="text" name="password" required>
+
+
+
+            <br>
 
             <button>Add a new website</button>
         </form>
@@ -71,12 +100,15 @@
             <label for="id">Document id:</label>
             <input type="text" name="id" required>
 
+
+
+            <br>
+
             <button>Delete a website</button>
         </form>
 
         <form class="update">
             <label for="id">Document id:</label>
-            <input type="text" name="id" required>
 
             <label for="username">Username:</label>
             <input type="text" name="username" required>
@@ -99,6 +131,17 @@
         <!--    </p>-->
 
         <!--</div>-->
+
+
+            <br>
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="text" name="password" required>
+            <br>
+            <button>Update a website</button>
+        </form>
 
 
         <script type="module" src="../src/index.js"></script>
