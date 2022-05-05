@@ -24,6 +24,7 @@ initializeApp(firebaseConfig)
 // initialize services | db= database
 const db = getFirestore()
 
+
 // collection ref
 const colRef = collection(db,'Websites')
 
@@ -83,3 +84,21 @@ updateForm.addEventListener('submit', (e) => {
         updateForm.reset()
     })
 })
+
+
+
+//REALTIME
+function GetAllDataOnce(){
+    const dbRef = ref(db);
+    
+    get(child(dbRef, "Website"))
+    .then((snapshot)=>{
+        
+        var websites =[];
+        
+        snapshot.forEach(childSnapshot => {
+            websites.push(childSnapshot.val());
+        });
+        AddAllItemsToTable(websites);
+    })
+}
