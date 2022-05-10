@@ -29,15 +29,17 @@ const db = getFirestore()
 
 // collection ref
 const colRef = collection(db,'Websites')
-
+let websites = []
 // real time collection data
 onSnapshot(colRef, (snapshot) => {
-    let websites = []
+   // let websites = []
     snapshot.docs.forEach((doc) => {
         websites.push({ ...doc.data(), id: doc.id })
     })
     console.log(websites)
 })
+document.querySelectorAll("p").innerHTML = websites
+document.
 
 // this will try to get all the docs from colRef, aka the collection called Websites.
 
@@ -90,19 +92,19 @@ updateForm.addEventListener('submit', (e) => {
 
 
 //REALTIME
-import {getDatabase}form
+// import {getDatabase}form
 
-function GetAllDataOnce(){
-    const dbRef = ref(db);
+// function GetAllDataOnce(){
+//     const dbRef = ref(db);
 
-    get(child(dbRef, "Website"))
-    .then((snapshot)=>{
+//     get(child(dbRef, "Website"))
+//     .then((snapshot)=>{
 
-        var websites =[];
+//         var websites =[];
 
-        snapshot.forEach(childSnapshot => {
-            websites.push(childSnapshot.val());
-        });
-        AddAllItemsToTable(websites);
-    })
-}
+//         snapshot.forEach(childSnapshot => {
+//             websites.push(childSnapshot.val());
+//         });
+//         AddAllItemsToTable(websites);
+//     })
+// }
