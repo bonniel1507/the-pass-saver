@@ -27,9 +27,42 @@ initializeApp(firebaseConfig)
 const db = getFirestore()
 
 
+// // collection ref
+// const colRef = collection(db,'Websites')
+// let websites = []
+// // real time collection data
+// onSnapshot(colRef, (snapshot) => {
+//   // let websites = []
+//     snapshot.docs.forEach((doc) => {
+//         websites.push({ ...doc.data(), id: doc.id })
+//     })
+//     console.log(websites)
+
+//     for(var i = 0; i<websites.length; i++){
+//         // for(var ii = 0; ii <= 3; ii++){
+//             var p = document.createElement('p')
+//             p.innerHTML = websites[i]
+//             console.log(websites[i])
+//             document.querySelector('div').appendChild(p)
+//         // }
+//     }
+// })
+
+// for(var i = 0; i<websites.length; i++){
+//     var p = document.createElement('p')
+//     p.innerHTML = websites[i]
+//     document.querySelector('div').appendChild(p)
+// }
+// this will try to get all the docs from colRef, aka the collection called Websites.
+
+
+
 // collection ref
 const colRef = collection(db,'Websites')
-let websites = []
+let websites = {
+    website: []
+    username:[]
+}
 // real time collection data
 onSnapshot(colRef, (snapshot) => {
    // let websites = []
@@ -37,11 +70,19 @@ onSnapshot(colRef, (snapshot) => {
         websites.push({ ...doc.data(), id: doc.id })
     })
     console.log(websites)
-})
-document.querySelectorAll("p").innerHTML = websites
-document.
 
-// this will try to get all the docs from colRef, aka the collection called Websites.
+    for(var i = 0; i<websites.length; i++){
+        // for(var ii = 0; ii <= 3; ii++){
+            var p = document.createElement('p')
+            p.innerHTML = websites[i]
+            console.log(websites[i])
+            document.querySelector('div').appendChild(p)
+        // }
+    }
+})
+
+
+
 
 
 // adding websites
