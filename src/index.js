@@ -1,4 +1,4 @@
-// connect firebase project from backend to front end. Info we need
+git // connect firebase project from backend to front end. Info we need
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
@@ -56,8 +56,6 @@ const db = getFirestore()
 // this will try to get all the docs from colRef, aka the collection called Websites.
 
 
-
-// collection ref
 // const colRef = collection(db,'Websites')
 // let websites = {
 //     website: [],
@@ -81,8 +79,6 @@ const db = getFirestore()
 //         // }
 //     }
 // })
-
-
 
 
 
