@@ -58,28 +58,29 @@ const db = getFirestore()
 
 
 // collection ref
-const colRef = collection(db,'Websites')
-let websites = {
-    website: []
-    username:[]
-}
-// real time collection data
-onSnapshot(colRef, (snapshot) => {
-   // let websites = []
-    snapshot.docs.forEach((doc) => {
-        websites.push({ ...doc.data(), id: doc.id })
-    })
-    console.log(websites)
+// const colRef = collection(db,'Websites')
+// let websites = {
+//     website: [],
+//     username: [],
+//     password: []
+// }
+// // real time collection data
+// onSnapshot(colRef, (snapshot) => {
+//   // let websites = []
+//     snapshot.docs.forEach((doc) => {
+//         websites.push({ ...doc.data(), id: doc.id })
+//     })
+//     console.log(websites)
 
-    for(var i = 0; i<websites.length; i++){
-        // for(var ii = 0; ii <= 3; ii++){
-            var p = document.createElement('p')
-            p.innerHTML = websites[i]
-            console.log(websites[i])
-            document.querySelector('div').appendChild(p)
-        // }
-    }
-})
+//     for(var i = 0; i<websites.length; i++){
+//         // for(var ii = 0; ii <= 3; ii++){
+//             var p = document.createElement('p')
+//             p.innerHTML = websites[i]
+//             console.log(websites[i])
+//             document.querySelector('div').appendChild(p)
+//         // }
+//     }
+// })
 
 
 
