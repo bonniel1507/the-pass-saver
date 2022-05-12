@@ -1,4 +1,4 @@
-// connect firebase project from backend to front end. Info we need
+git // connect firebase project from backend to front end. Info we need
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
@@ -39,7 +39,7 @@ onSnapshot(colRef, (snapshot) => {
     console.log(websites)
 })
 document.querySelectorAll("p").innerHTML = websites
-document.
+
 
 // this will try to get all the docs from colRef, aka the collection called Websites.
 
