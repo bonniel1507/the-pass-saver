@@ -1,4 +1,4 @@
-git // connect firebase project from backend to front end. Info we need
+// connect firebase project from backend to front end. Info we need
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
@@ -93,8 +93,7 @@ document.querySelectorAll("p").innerHTML = websites
 //         // }
 //     }
 // })
-
-
+ 
 
 // adding websites
 const addWebsiteForm = document.querySelector('.add')
