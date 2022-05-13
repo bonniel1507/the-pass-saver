@@ -1,4 +1,4 @@
-git // connect firebase project from backend to front end. Info we need
+// connect firebase project from backend to front end. Info we need
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
@@ -25,28 +25,41 @@ initializeApp(firebaseConfig)
 
 // initialize services | db= database
 const db = getFirestore()
+// const db1 = firebase.firestore();
 
 
-// // collection ref
-// const colRef = collection(db,'Websites')
+// collection ref
+const colRef = collection(db,'Websites')
 // let websites = []
-// // real time collection data
-// onSnapshot(colRef, (snapshot) => {
-//   // let websites = []
-//     snapshot.docs.forEach((doc) => {
-//         websites.push({ ...doc.data(), id: doc.id })
-//     })
-//     console.log(websites)
+// real time collection data
+onSnapshot(colRef, (snapshot) => {
+   let websites = []
+    snapshot.docs.forEach((doc) => {
+        websites.push({ ...doc.data(), id: doc.id })
+    })
+    console.log(websites)
 
-//     for(var i = 0; i<websites.length; i++){
-//         // for(var ii = 0; ii <= 3; ii++){
-//             var p = document.createElement('p')
-//             p.innerHTML = websites[i]
-//             console.log(websites[i])
-//             document.querySelector('div').appendChild(p)
-//         // }
-//     }
-// })
+    // for(var i = 0; i<websites.length; i++){
+    //     // for(var ii = 0; ii <= 3; ii++){
+    //         var p = document.createElement('p')
+    //         p.innerHTML = websites[i]
+    //         console.log(websites[i])
+    //         document.querySelector('div').appendChild(p)
+    //     // }
+    // }
+
+    Websites.forEach(function(website){
+        let web = document.createElement("span");
+        let name = document.createElement("span");
+        let pass = document.createElement("span");
+
+      web.innerHTML = website.website
+      name.innerHTML = website.username
+      pass.innerHTML = website.password
+
+document.querySelector('#lists').appendChild()
+    })
+})
 
 // for(var i = 0; i<websites.length; i++){
 //     var p = document.createElement('p')
@@ -80,6 +93,32 @@ const db = getFirestore()
 //     }
 // })
 
+
+// const lists = document.getElementById("lists");
+
+// db1.collection("Websites")
+//   .get()
+//   .then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       let p = document.createElement("p");
+//       let web = document.createElement("span");
+//       let name = document.createElement("span");
+//       let pass = document.createElement("span");
+
+//       web.textContent = doc.data().website;
+//       name.textContent = doc.data().username;
+//       pass.textContent = doc.data().password;
+
+//       lists.appendChild(p);
+//       p.appendChild(web);
+//       p.appendChild(name);
+//       p.appendChild(pass);
+
+//     });
+//   })
+//   .catch((error) => {
+//     console.log("Error getting documents: ", error);
+//   });
 
 
 // adding websites
