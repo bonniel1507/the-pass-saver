@@ -53,11 +53,11 @@ onSnapshot(colRef, (snapshot) => {
         let name = document.createElement("span");
         let pass = document.createElement("span");
 
-      web.innerHTML = website.website
-      name.innerHTML = website.username
-      pass.innerHTML = website.password
+        web.innerHTML = website.website
+        name.innerHTML = website.username
+        pass.innerHTML = website.password
 
-document.querySelector('#lists').appendChild()
+        document.querySelector('#lists').appendChild()
     })
 })
 
