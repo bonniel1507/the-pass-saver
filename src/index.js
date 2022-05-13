@@ -56,20 +56,6 @@ const db = getFirestore()
 // this will try to get all the docs from colRef, aka the collection called Websites.
 
 
-
-// collection ref
-const colRef = collection(db,'Websites')
-let websites = []
-// real time collection data
-onSnapshot(colRef, (snapshot) => {
-   // let websites = []
-    snapshot.docs.forEach((doc) => {
-        websites.push({ ...doc.data(), id: doc.id })
-    })
-    console.log(websites)
-})
-document.querySelectorAll("p").innerHTML = websites
-
 // const colRef = collection(db,'Websites')
 // let websites = {
 //     website: [],
