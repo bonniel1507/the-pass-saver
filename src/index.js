@@ -30,7 +30,7 @@ const db = getFirestore()
 
 // collection ref
 const colRef = collection(db,'Websites')
-// let websites = []
+
 // real time collection data
 onSnapshot(colRef, (snapshot) => {
    let websites = []
@@ -39,96 +39,26 @@ onSnapshot(colRef, (snapshot) => {
     })
     console.log(websites)
 
-    // for(var i = 0; i<websites.length; i++){
-    //     // for(var ii = 0; ii <= 3; ii++){
-    //         var p = document.createElement('p')
-    //         p.innerHTML = websites[i]
-    //         console.log(websites[i])
-    //         document.querySelector('div').appendChild(p)
-    //     // }
-    // }
-
+    //table
     websites.forEach(function(website){
-        let p = document.createElement("p")
-        let web = document.createElement("span");
-        let name = document.createElement("span");
-        let pass = document.createElement("span");
-        let br1 = document.createElement("br")
-        let br2 = document.createElement("br")
-        let br3 = document.createElement("br")
+        let tr = document.createElement("tr")
+        let web = document.createElement("td");
+        let name = document.createElement("td");
+        let pass = document.createElement("td");
+        let id = document.createElement("td")
 
-        web.innerHTML = "Website: " + website.website
-        name.innerHTML = "Username: " + website.username
-        pass.innerHTML = "Password: " + website.password
+        web.innerHTML = website.website
+        name.innerHTML = website.username
+        pass.innerHTML = website.password
+        id.innerHTML = website.id
 
-        document.querySelector('#lists').appendChild(p)
-        document.querySelector('p').appendChild(web)
-        document.querySelector('p').appendChild(br1)
-        document.querySelector('p').appendChild(name)
-        document.querySelector('p').appendChild(br2)
-        document.querySelector('p').appendChild(pass)
-        document.querySelector('p').appendChild(br3)
+        document.querySelector('#lists').appendChild(tr)
+        document.querySelector('tr').appendChild(web)
+        document.querySelector('tr').appendChild(name)
+        document.querySelector('tr').appendChild(pass)
+        document.querySelector('tr').appendChild(id)
     })
 })
-
-// for(var i = 0; i<websites.length; i++){
-//     var p = document.createElement('p')
-//     p.innerHTML = websites[i]
-//     document.querySelector('div').appendChild(p)
-// }
-// this will try to get all the docs from colRef, aka the collection called Websites.
-
-
-// const colRef = collection(db,'Websites')
-// let websites = {
-//     website: [],
-//     username: [],
-//     password: []
-// }
-// // real time collection data
-// onSnapshot(colRef, (snapshot) => {
-//   // let websites = []
-//     snapshot.docs.forEach((doc) => {
-//         websites.push({ ...doc.data(), id: doc.id })
-//     })
-//     console.log(websites)
-
-//     for(var i = 0; i<websites.length; i++){
-//         // for(var ii = 0; ii <= 3; ii++){
-//             var p = document.createElement('p')
-//             p.innerHTML = websites[i]
-//             console.log(websites[i])
-//             document.querySelector('div').appendChild(p)
-//         // }
-//     }
-// })
-
-
-// const lists = document.getElementById("lists");
-
-// db1.collection("Websites")
-//   .get()
-//   .then((querySnapshot) => {
-//     querySnapshot.forEach((doc) => {
-//       let p = document.createElement("p");
-//       let web = document.createElement("span");
-//       let name = document.createElement("span");
-//       let pass = document.createElement("span");
-
-//       web.textContent = doc.data().website;
-//       name.textContent = doc.data().username;
-//       pass.textContent = doc.data().password;
-
-//       lists.appendChild(p);
-//       p.appendChild(web);
-//       p.appendChild(name);
-//       p.appendChild(pass);
-
-//     });
-//   })
-//   .catch((error) => {
-//     console.log("Error getting documents: ", error);
-//   });
 
 
 // adding websites
