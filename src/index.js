@@ -48,16 +48,26 @@ onSnapshot(colRef, (snapshot) => {
     //     // }
     // }
 
-    Websites.forEach(function(website){
+    websites.forEach(function(website){
+        let p = document.createElement("p")
         let web = document.createElement("span");
         let name = document.createElement("span");
         let pass = document.createElement("span");
+        let br1 = document.createElement("br")
+        let br2 = document.createElement("br")
+        let br3 = document.createElement("br")
 
-        web.innerHTML = website.website
-        name.innerHTML = website.username
-        pass.innerHTML = website.password
+        web.innerHTML = "Website: " + website.website
+        name.innerHTML = "Username: " + website.username
+        pass.innerHTML = "Password: " + website.password
 
-        document.querySelector('#lists').appendChild()
+        document.querySelector('#lists').appendChild(p)
+        document.querySelector('p').appendChild(web)
+        document.querySelector('p').appendChild(br1)
+        document.querySelector('p').appendChild(name)
+        document.querySelector('p').appendChild(br2)
+        document.querySelector('p').appendChild(pass)
+        document.querySelector('p').appendChild(br3)
     })
 })
 
