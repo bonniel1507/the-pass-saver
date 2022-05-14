@@ -25,8 +25,6 @@ initializeApp(firebaseConfig)
 
 // initialize services | db= database
 const db = getFirestore()
-// const db1 = firebase.firestore();
-
 
 // collection ref
 const colRef = collection(db,'Websites')
