@@ -1,4 +1,4 @@
-// connect firebase project from backend to front end. Info we need
+cd// connect firebase project from backend to front end. Info we need
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
@@ -47,6 +47,7 @@ const db = getFirestore()
 //         // }
 //     }
 // })
+
 
 // for(var i = 0; i<websites.length; i++){
 //     var p = document.createElement('p')
