@@ -52,11 +52,11 @@ onSnapshot(colRef, (snapshot) => {
         pass.innerHTML = website.password
         id.innerHTML = website.id
 
-        document.querySelector('#lists').appendChild(tr)
-        document.querySelector('tr').appendChild(web)
-        document.querySelector('tr').appendChild(name)
-        document.querySelector('tr').appendChild(pass)
-        document.querySelector('tr').appendChild(id)
+        document.querySelector('#tbody').appendChild(tr)
+        tr.appendChild(web)
+        tr.appendChild(name)
+        tr.appendChild(pass)
+        tr.appendChild(id)
     })
 })
 

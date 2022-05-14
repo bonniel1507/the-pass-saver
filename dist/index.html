@@ -23,6 +23,22 @@
             button {
                 margin: 10px 0px;
             }
+            
+            table {
+                border: 2px solid lightGray;
+            }
+            
+            th {
+                padding: 5px 50px;
+            }
+            
+            tr {
+                border-bottom: 1px solid lightGray;
+            }
+            
+            td {
+                padding: 10px 50px;
+            }
 
 
         </style>
@@ -70,20 +86,19 @@
 
         <button> Sign In with Google </button>
 
-
-        <!--<div id="lists">-->
-
-
-
-        <!--</div>-->
          
-        <table id="lists">
-            <tr>
-                <th>Website</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>ID</th>
-            </tr>
+        <table id="lists" align="center">
+            <thead>
+                <tr>
+                    <th>Website</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
         </table>
 
 
