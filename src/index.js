@@ -73,6 +73,7 @@ addWebsiteForm.addEventListener('submit', (e) => {
     })
     .then(() => {
         addWebsiteForm.reset()
+        window.location.reload()
     })
 })
 
@@ -86,6 +87,7 @@ deleteWebsiteForm.addEventListener('submit', (e) => {
     deleteDoc(docRef)
         .then(() => {
             deleteWebsiteForm.reset()
+            window.location.reload()
         })
 })
 
@@ -103,6 +105,7 @@ updateForm.addEventListener('submit', (e) => {
     })
     .then(() => {
         updateForm.reset()
+        window.location.reload()
     })
 })
 
