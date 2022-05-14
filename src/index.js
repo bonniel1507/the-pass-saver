@@ -25,6 +25,7 @@ initializeApp(firebaseConfig)
 
 // initialize services | db= database
 const db = getFirestore()
+// const db1 = firebase.firestore();
 
 
 // // collection ref
@@ -81,6 +82,39 @@ const db = getFirestore()
 //     }
 // })
  
+
+// collection ref
+const colRef = collection(db,'Websites')
+
+// real time collection data
+onSnapshot(colRef, (snapshot) => {
+   let websites = []
+    snapshot.docs.forEach((doc) => {
+        websites.push({ ...doc.data(), id: doc.id })
+    })
+    console.log(websites)
+
+    //table
+    websites.forEach(function(website){
+        let tr = document.createElement("tr")
+        let web = document.createElement("td");
+        let name = document.createElement("td");
+        let pass = document.createElement("td");
+        let id = document.createElement("td")
+
+        web.innerHTML = website.website
+        name.innerHTML = website.username
+        pass.innerHTML = website.password
+        id.innerHTML = website.id
+
+        document.querySelector('#tbody').appendChild(tr)
+        tr.appendChild(web)
+        tr.appendChild(name)
+        tr.appendChild(pass)
+        tr.appendChild(id)
+    })
+})
+
 
 // adding websites
 const addWebsiteForm = document.querySelector('.add')

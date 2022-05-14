@@ -23,6 +23,22 @@
             button {
                 margin: 10px 0px;
             }
+            
+            table {
+                border: 2px solid lightGray;
+            }
+            
+            th {
+                padding: 5px 50px;
+            }
+            
+            tr {
+                border-bottom: 1px solid lightGray;
+            }
+            
+            td {
+                padding: 10px 50px;
+            }
 
 
         </style>
@@ -70,11 +86,29 @@
 
         <button> Sign In with Google </button>
 
+
         <div id="list">
 
 
 
         </div>
+
+         
+        <table id="lists" align="center">
+            <thead>
+                <tr>
+                    <th>Website</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+        
+        <br>
 
 
         <script type="module" src="../src/index.js"></script>
