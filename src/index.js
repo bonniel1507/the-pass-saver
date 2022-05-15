@@ -22,11 +22,11 @@ const firebaseConfig = {
 initializeApp(firebaseConfig)
 
 
-
 // initialize services | db= database
 const db = getFirestore()
-// const db1 = firebase.firestore();
 
+// collection ref
+var account = prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
 
 // // collection ref
 // const colRef = collection(db,'Websites')
@@ -83,8 +83,14 @@ const db = getFirestore()
 // })
 
 
-// collection ref
-const colRef = collection(db,'Websites')
+const colRef = collection(db, account)
+if (colRef.empty) {
+
+
+    firebase.firestore().collection("account").add({
+
+    })
+}
 
 // real time collection data
 onSnapshot(colRef, (snapshot) => {
@@ -128,6 +134,7 @@ addWebsiteForm.addEventListener('submit', (e) => {
     })
     .then(() => {
         addWebsiteForm.reset()
+        document.querySelector('#tbody').reload()
     })
 })
 
@@ -136,11 +143,12 @@ const deleteWebsiteForm = document.querySelector('.delete')
 deleteWebsiteForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
-    const docRef = doc(db, 'Websites', deleteWebsiteForm.id.value)
+    const docRef = doc(db, account, deleteWebsiteForm.id.value)
 
     deleteDoc(docRef)
         .then(() => {
             deleteWebsiteForm.reset()
+            document.querySelector('#lists').location.reload()
         })
 })
 
@@ -150,15 +158,15 @@ const updateForm = document.querySelector('.update')
 updateForm.addEventListener('submit', (e) => {
    e.preventDefault()
 
-    const docRef = doc(db, 'Websites', updateForm.id.value)
+    const docRef = doc(db, account, updateForm.id.value)
 
     updateDoc(docRef, {
         username: updateForm.username.value,
         password: updateForm.password.value,
-
     })
     .then(() => {
         updateForm.reset()
+        document.querySelector('#lists').location.reload()
     })
 })
 
