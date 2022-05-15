@@ -2,7 +2,10 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
-
+// import {
+//   getFirestore, collection, getDocs,
+//   addDoc, deleteDoc, getDoc, doc,
+//   onSnapshot, updateDoc, setDoc
 import {
   getFirestore, collection, onSnapshot,
   addDoc, deleteDoc, doc,
@@ -22,30 +25,34 @@ const firebaseConfig = {
 // initialize firebase app
 initializeApp(firebaseConfig)
 
+
 // initialize services | db= database
 const db = getFirestore()
 
 // collection ref
+
 var signin = document.querySelector('.signin')
 var account
 // signin.addEventListener('submit', (e) => {
 signin.addEventListener('submit',function(){
-    // e.preventDefault()
+    e.preventDefault()
 
     // var account = document.querySelector('.account').value
     account = signin.account.value
     account = account.toLowerCase()
     console.log(account)
-    // const docRef = doc(db, account, deleteWebsiteForm.id.value)
 
 })
+
+// var account =  prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
+
 
 const colRef = collection(db, account)
 if (colRef.empty) {
 
     firebase.firestore().collection("account").add({
 
-    })
+   })
 }
 
 // real time collection data
@@ -81,10 +88,10 @@ onSnapshot(colRef, (snapshot) => {
 // adding websites
 const addWebsiteForm = document.querySelector('.add')
 addWebsiteForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+  e.preventDefault()
 
     addDoc(colRef, {
-        website: addWebsiteForm.website.value,
+        website:addWebsiteForm.website.value,
         username: addWebsiteForm.username.value,
         password: addWebsiteForm.password.value,
     })
@@ -102,10 +109,10 @@ deleteWebsiteForm.addEventListener('submit', (e) => {
     const docRef = doc(db, account, deleteWebsiteForm.id.value)
 
     deleteDoc(docRef)
-        .then(() => {
-            deleteWebsiteForm.reset()
-            indow.location.reload()
-        })
+    .then(() => {
+        deleteWebsiteForm.reset()
+        window.location.reload()
+    })
 })
 
 // update websites
@@ -121,26 +128,9 @@ updateForm.addEventListener('submit', (e) => {
     })
     .then(() => {
         updateForm.reset()
-        indow.location.reload()
+        window.location.reload()
+    })
+    .then(() => {
+        document.querySelector('#lists').innerHTML
     })
 })
-
-
-
-//REALTIME
-// import {getDatabase}form
-
-// function GetAllDataOnce(){
-//     const dbRef = ref(db);
-
-//     get(child(dbRef, "Website"))
-//     .then((snapshot)=>{
-
-//         var websites =[];
-
-//         snapshot.forEach(childSnapshot => {
-//             websites.push(childSnapshot.val());
-//         });
-//         AddAllItemsToTable(websites);
-//     })
-// }
