@@ -1,7 +1,6 @@
-cd// connect firebase project from backend to front end. Info we need
+// connect firebase project from backend to front end. Info we need
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
-
 
 import {
   getFirestore, collection, onSnapshot,
@@ -21,6 +20,7 @@ const firebaseConfig = {
 
 // initialize firebase app
 initializeApp(firebaseConfig)
+
 
 
 // initialize services | db= database
@@ -81,7 +81,7 @@ const db = getFirestore()
 //         // }
 //     }
 // })
- 
+
 
 // collection ref
 const colRef = collection(db,'Websites')
@@ -89,7 +89,7 @@ const colRef = collection(db,'Websites')
 // real time collection data
 onSnapshot(colRef, (snapshot) => {
    let websites = []
-    snapshot.docs.forEach((doc) => {
+    snapshot.docs.forEach(function(doc){
         websites.push({ ...doc.data(), id: doc.id })
     })
     console.log(websites)
@@ -119,10 +119,10 @@ onSnapshot(colRef, (snapshot) => {
 // adding websites
 const addWebsiteForm = document.querySelector('.add')
 addWebsiteForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+  e.preventDefault()
 
     addDoc(colRef, {
-        website: addWebsiteForm.website.value,
+        website:addWebsiteForm.website.value,
         username: addWebsiteForm.username.value,
         password: addWebsiteForm.password.value,
     })
@@ -134,7 +134,7 @@ addWebsiteForm.addEventListener('submit', (e) => {
 // deleting websites
 const deleteWebsiteForm = document.querySelector('.delete')
 deleteWebsiteForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+  e.preventDefault()
 
     const docRef = doc(db, 'Websites', deleteWebsiteForm.id.value)
 
@@ -146,8 +146,9 @@ deleteWebsiteForm.addEventListener('submit', (e) => {
 
 // update websites
 const updateForm = document.querySelector('.update')
+
 updateForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+   e.preventDefault()
 
     const docRef = doc(db, 'Websites', updateForm.id.value)
 
