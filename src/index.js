@@ -21,7 +21,6 @@ const firebaseConfig = {
   appId: "1:1006010437901:web:903a0e2e5898627617a044",
   measurementId: "G-6T201008QW"
 }
-
 // initialize firebase app
 initializeApp(firebaseConfig)
 
@@ -31,25 +30,32 @@ const db = getFirestore()
 
 // collection ref
 
-var signin = document.querySelector('.signin')
+// var signin = document.querySelector('.signin')
 var account
-// signin.addEventListener('submit', (e) => {
-signin.addEventListener('submit',function(){
-    e.preventDefault()
+// // signin.addEventListener('submit', (e) => {
+// signin.addEventListener('submit',function(){
+//     e.preventDefault()
 
-    // var account = document.querySelector('.account').value
-    account = signin.account.value
-    account = account.toLowerCase()
-    console.log(account)
+//     // var account = document.querySelector('.account').value
+//     account = signin.account.value
+//     account = account.toLowerCase()
+//     console.log(account)
 
-})
+// })
 
-// var account =  prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
+// const login = document.querySelector('.login')
+// document.querySelector('#signin').addEventListener('click',function(e){
+//     e.preventDefault()
+    
+//     account = login.account.value.toLowerCase()
+//     login.reset()
+// })
+
+var account =  prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
 
 
 const colRef = collection(db, account)
 if (colRef.empty) {
-
     firebase.firestore().collection("account").add({
 
    })

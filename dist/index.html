@@ -1,4 +1,8 @@
-<html>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +16,8 @@
 
             h1 {
                 margin: 15px;
+                font-family: 'Caveat', cursive;
+
             }
 
             form {
@@ -38,7 +44,10 @@
             td {
                 padding: 10px 50px;
             }
+            h2{
+            font-family: 'Padauk', sans-serif;
 
+            }
 
         </style>
 
@@ -47,19 +56,17 @@
     </head>
     <body>
 
-        <h1>The Password Saver! If you don't have an account yet, just sign in, enter your username and that will be your username from now on!</h1>
-
+        <h2>If you don't have an account yet, just sign in, enter your username and that will be your username from now on!</h2></center>
         
-        <form class="signin">
+        <form class="login">
             <label for="account">Account:</label>
             <input type="text" name="account" required>
             <br>
-            <button>Sign In</button>
+            <button id ="signin">Sign In</button>
         </form>
         
 
         <form class="add">
-            
             <label for="website">Website:</label>
             <input type="text" name="website" required>
             <br>
@@ -92,12 +99,6 @@
             <button id="hi">Update a website</button>
         </form>
 
-        <div id="list">
-
-
-
-        </div>
-
 
         <table id="lists" align="center">
             <thead>
@@ -118,10 +119,6 @@
 
         <script type="module" src="../src/index.js">
 
-//          document.getElementById("update").addEventListener('click',function(){
-//     prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
-
-// }
         </script>
 
     </body>
