@@ -31,7 +31,7 @@ const db = getFirestore()
 // collection ref
 
 // var signin = document.querySelector('.signin')
-var account
+// var account
 // // signin.addEventListener('submit', (e) => {
 // signin.addEventListener('submit',function(){
 //     e.preventDefault()
