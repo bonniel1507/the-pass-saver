@@ -1,9 +1,8 @@
-
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
@@ -49,9 +48,11 @@
     <body>
 
         <h1>Open console to view the informations</h1>
+        <button id ="updates"> Sign In</button>
 
 
         <form class="add">
+            
             <label for="website">Website:</label>
             <input type="text" name="website" required>
             <br>
@@ -81,11 +82,8 @@
             <label for="password">Password:</label>
             <input type="text" name="password" required>
             <br>
-            <button>Update a website</button>
+            <button id="hi">Update a website</button>
         </form>
-
-        <button > Sign In with Google </button>
-
 
         <div id="list">
 
@@ -111,7 +109,13 @@
         <br>
 
 
-        <script type="module" src="../src/index.js"></script>
+        <script type="module" src="../src/index.js">
+
+//          document.getElementById("update").addEventListener('click',function(){
+//     prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
+
+// }
+        </script>
 
     </body>
 </html>

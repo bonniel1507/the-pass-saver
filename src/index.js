@@ -3,9 +3,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
 import {
-  getFirestore, collection, onSnapshot,
-  addDoc, deleteDoc, doc,
-  updateDoc
+  getFirestore, collection, getDocs,
+  addDoc, deleteDoc, getDoc, doc,
+  onSnapshot, updateDoc, setDoc
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"; //'firebase/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyAgQrhvuFI_AMWZ1ErNtlrPLV_kgk9RP4s",
@@ -26,7 +26,13 @@ initializeApp(firebaseConfig)
 const db = getFirestore()
 
 // collection ref
+
 var account = prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
+
+  document.getElementById("hi").addEventListener("click",function(){
+ var account = prompt("Please enter your username").toLowerCase()
+})
+
 
 // // collection ref
 // const colRef = collection(db,'Websites')
@@ -89,12 +95,15 @@ if (colRef.empty) {
 
     firebase.firestore().collection("account").add({
 
-    })
+   })
 }
 
 // real time collection data
-onSnapshot(colRef, (snapshot) => {
+// onSnapshot(colRef, (snapshot) => {
+//   let websites = []
    let websites = []
+   getDocs(colRef)
+        .then(function(snapshot){
     snapshot.docs.forEach(function(doc){
         websites.push({ ...doc.data(), id: doc.id })
     })
@@ -141,7 +150,7 @@ addWebsiteForm.addEventListener('submit', (e) => {
 // deleting websites
 const deleteWebsiteForm = document.querySelector('.delete')
 deleteWebsiteForm.addEventListener('submit', (e) => {
-  e.preventDefault()
+    e.preventDefault()
 
     const docRef = doc(db, account, deleteWebsiteForm.id.value)
 
@@ -150,6 +159,7 @@ deleteWebsiteForm.addEventListener('submit', (e) => {
             deleteWebsiteForm.reset()
             document.querySelector('#lists').location.reload()
         })
+
 })
 
 // update websites
@@ -168,6 +178,8 @@ updateForm.addEventListener('submit', (e) => {
         updateForm.reset()
         document.querySelector('#lists').location.reload()
     })
+
+
 })
 
 
