@@ -26,12 +26,7 @@ initializeApp(firebaseConfig)
 const db = getFirestore()
 
 // collection ref
-
-var account = prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
-
-  document.getElementById("hi").addEventListener("click",function(){
- var account = prompt("Please enter your username").toLowerCase()
-})
+var account =  prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
 
 
 // // collection ref
@@ -178,7 +173,9 @@ updateForm.addEventListener('submit', (e) => {
         updateForm.reset()
         document.querySelector('#lists').location.reload()
     })
-
+    .then(() => {
+        document.querySelector('#lists').innerHTML
+    })
 
 })
 
