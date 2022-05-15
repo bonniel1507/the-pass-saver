@@ -26,7 +26,19 @@ initializeApp(firebaseConfig)
 const db = getFirestore()
 
 // collection ref
-var account = prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
+var signin = document.querySelector('.signin')
+var account
+// signin.addEventListener('submit', (e) => {
+signin.addEventListener('submit',function(){
+    // e.preventDefault()
+
+    // var account = document.querySelector('.account').value
+    account = signin.account.value
+    account = account.toLowerCase()
+    console.log(account)
+    // const docRef = doc(db, account, deleteWebsiteForm.id.value)
+
+})
 
 const colRef = collection(db, account)
 if (colRef.empty) {
@@ -78,7 +90,7 @@ addWebsiteForm.addEventListener('submit', (e) => {
     })
     .then(() => {
         addWebsiteForm.reset()
-        document.querySelector('#tbody').reload()
+        window.location.reload()
     })
 })
 
@@ -92,7 +104,7 @@ deleteWebsiteForm.addEventListener('submit', (e) => {
     deleteDoc(docRef)
         .then(() => {
             deleteWebsiteForm.reset()
-            document.querySelector('#lists').location.reload()
+            indow.location.reload()
         })
 })
 
@@ -109,7 +121,7 @@ updateForm.addEventListener('submit', (e) => {
     })
     .then(() => {
         updateForm.reset()
-        document.querySelector('#lists').location.reload()
+        indow.location.reload()
     })
 })
 
