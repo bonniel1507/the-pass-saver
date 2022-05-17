@@ -2,14 +2,14 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"; //"firebase/app";
 
-// import {
-//   getFirestore, collection, getDocs,
-//   addDoc, deleteDoc, getDoc, doc,
-//   onSnapshot, updateDoc, setDoc
 import {
-  getFirestore, collection, onSnapshot,
-  addDoc, deleteDoc, doc,
-  updateDoc
+  getFirestore, collection, getDocs,
+  addDoc, deleteDoc, getDoc, doc,
+  onSnapshot, updateDoc, setDoc
+// import {
+//   getFirestore, collection, onSnapshot,
+//   addDoc, deleteDoc, doc,
+//   updateDoc
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"; //'firebase/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyAgQrhvuFI_AMWZ1ErNtlrPLV_kgk9RP4s",
@@ -46,7 +46,7 @@ const db = getFirestore()
 // const login = document.querySelector('.login')
 // document.querySelector('#signin').addEventListener('click',function(e){
 //     e.preventDefault()
-    
+
 //     account = login.account.value.toLowerCase()
 //     login.reset()
 // })
@@ -62,8 +62,10 @@ if (colRef.empty) {
 }
 
 // real time collection data
-onSnapshot(colRef, (snapshot) => {
+//onSnapshot(colRef, (snapshot) => {
    let websites = []
+   getDocs(colRef)
+        .then(function(snapshot){
     snapshot.docs.forEach((doc) => {
         websites.push({ ...doc.data(), id: doc.id })
     })
