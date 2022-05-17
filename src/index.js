@@ -51,7 +51,7 @@ const db = getFirestore()
 //     login.reset()
 // })
 
-var account =  prompt("Please enter Username, you can use your hstat email(everything before @)").toLowerCase()
+var account =  prompt("Please enter account name").toLowerCase()
 
 
 const colRef = collection(db, account)
