@@ -30,7 +30,11 @@ td {
 }
 
 h2{
-font-family: 'Quicksand', sans-serif;}
+    font-family: 'Quicksand', sans-serif;
+    margin: 50px;
+}
+
+
 h3{
     font-family:'Caveat';
 }
