@@ -12,22 +12,22 @@ import {
 //   updateDoc
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"; //'firebase/firestore';
 const firebaseConfig = {
-//   apiKey: "AIzaSyAgQrhvuFI_AMWZ1ErNtlrPLV_kgk9RP4s",
-//   authDomain: "the-pass-saver.firebaseapp.com",
-//   databaseURL: "https://the-pass-saver-default-rtdb.firebaseio.com",
-//   projectId: "the-pass-saver",
-//   storageBucket: "the-pass-saver.appspot.com",
-//   messagingSenderId: "1006010437901",
-//   appId: "1:1006010437901:web:903a0e2e5898627617a044",
-//   measurementId: "G-6T201008QW"
-  apiKey: "AIzaSyDwtt9nU5At77_2gIXsyPeYgV4AYibkvYo",
-  authDomain: "password-saver-33a01.firebaseapp.com",
-  databaseURL: "https://password-saver-33a01-default-rtdb.firebaseio.com",
-  projectId: "password-saver-33a01",
-  storageBucket: "password-saver-33a01.appspot.com",
-  messagingSenderId: "730030078547",
-  appId: "1:730030078547:web:396226808985562ab7e4a6",
-  measurementId: "G-LLVNVDFB8Q"
+  apiKey: "AIzaSyAgQrhvuFI_AMWZ1ErNtlrPLV_kgk9RP4s",
+  authDomain: "the-pass-saver.firebaseapp.com",
+  databaseURL: "https://the-pass-saver-default-rtdb.firebaseio.com",
+  projectId: "the-pass-saver",
+  storageBucket: "the-pass-saver.appspot.com",
+  messagingSenderId: "1006010437901",
+  appId: "1:1006010437901:web:903a0e2e5898627617a044",
+  measurementId: "G-6T201008QW"
+//   apiKey: "AIzaSyDwtt9nU5At77_2gIXsyPeYgV4AYibkvYo",
+//   authDomain: "password-saver-33a01.firebaseapp.com",
+//   databaseURL: "https://password-saver-33a01-default-rtdb.firebaseio.com",
+//   projectId: "password-saver-33a01",
+//   storageBucket: "password-saver-33a01.appspot.com",
+//   messagingSenderId: "730030078547",
+//   appId: "1:730030078547:web:396226808985562ab7e4a6",
+//   measurementId: "G-LLVNVDFB8Q"
 }
 // initialize firebase app
 initializeApp(firebaseConfig)
